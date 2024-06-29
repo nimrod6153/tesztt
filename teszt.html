@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szolgáltatások</title>
+    <link rel="icon" type="image/png" href="psychology.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .services {
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        .services h2, .services h3, .services p {
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .services h3 {
+            font-size: 1.5em;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .services p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .services img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            max-height: 400px;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        /* Animation */
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                background-color: #333;
+                width: 60%;
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 20px;
+                transition: transform 0.3s ease-in;
+            }
+
+            nav ul.open {
+                transform: translateX(0%);
+            }
+
+            nav ul li {
+                display: block;
+                margin: 15px 0;
+            }
+
+            nav ul li a {
+                font-size: 1.5em;
+                color: #fff;
+            }
+
+            .container {
+                width: 100%;
+                padding-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mezőfi-Horváth Antónia</h1>
+            <nav>
+                <ul>
+                    <li><a href="nyitolap.html">Kezdőlap</a></li>
+                    <li><a href="rolam.html">Rólam</a></li>
+                    <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li><a href="arak.html">Árak</a></li>
+                    <li><a href="rendelom.html">Rendelő</a></li>
+                    <li><a href="ujdonsagok.html">Szakmai megjelenések</a></li>
+                    <li><a href="foglalas.html">Online időpontfoglalás</a></li>
+                    <li><a href="oszpofik.html">Adományozás egy jó célért</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="services hidden">
+                <h2>Érezte már valaha, hogy ÖSSZETÖRT A SZÍVE?</h2>
+                <p>Ha igen, akkor Önnek biztosan volt veszteség az életében, akár haláleset, válás, szakítás, csalódás, költözés vagy háziállat elvesztése során.</p>
+                <div style="text-align: center;">
+                    <h4>„A gyász a veszteségre adott természetes és normális emberi reakció … <br> „mindazoknak a gyakran merőben ellentétes érzelmeknek az összessége, <br> amiket egy nagy változás vagy életünk addig megszokott rendjének a <br> fölborulása okoz." <br> <br> (W. James, R. Friedman).</h4>
+                </div>
+                <br>
+                <br>
+                <h2>Mi a Gyászfeldolgozás Módszer?</h2>
+                <p>A Gyászfeldolgozás Módszer® egy, az Egyesült Államokban kidolgozott önsegítő módszer, amely John W. Jamesnek és Russell Friedmannak köszönhető. Az általuk leírt és megtanított módszerrel a veszteségek hatékony érzelmi feldolgozása történhet meg, ahogy ezt több százezer veszteséget átélt személy saját élménye bizonyította az elmúlt 30 év során. 
+                    A módszer az amerikai szerzőpáros által leírt, <a href="https://www.libri.hu/konyv/russel_friedman.gyogyulas-a-gyaszbol.html">Magyarországon Gyógyulás a gyászból címmel magyar nyelven is megjelent</a> kézikönyvben is elolvasható, azonban annak elsajátítása és alkalmazása képzett Specialista vezetésével, biztonságos és diszkrét környezetben történik.
+                    A folyamat során megtanulja felismerni addigi technikáit, amikkel a rossz érzéseit próbálta elfedni, megvizsgálja eddigi veszteségeit, és beteljesítheti az addig be nem teljesített érzelmi kommunikációt.</p>
+                <br>
+                <br>
+                <img src="gyógyulás a gyászból könyv.jpg" alt="Gyógyulás a gyászból könyv">
+                <h2>Honnan tudhatom, hogy feldolgozatlan maradt egy veszteségem?</h2>
+                <h4>„A feldolgozatlan gyászt, veszteséget majdnem mindig az okozza, hogy azt kívánjuk, <br> bárcsak valamit másképpen, többet, vagy jobban tehettünk, vagy mondhattunk volna. <br> A feldolgozatlan gyász, egy kapcsolat során meg nem valósult reményekről, álmokról, és várakozásról is szól.” Amennyiben egy veszteséggel kapcsolatban Önnek is vannak ilyen jellegű „bárcsak”-gondolatai, akkor az azt jelzi, hogy a veszteség feldolgozatlan maradt.</h4>
+                <h2>Hogyan tudom megtanulni a módszert?</h2>
+                <p>A veszteségélményünk hatékony feldolgozását segítő Gyászfeldolgozás Módszer® 
+                    <strong>
+                        <ul>
+                            <li>egyéni (7 alkalom) vagy</li>
+                            <li>csoportos program (8 alkalom) során sajátítható el</li>
+                        </ul>
+                    </strong>
+                    <br>
+                    Ezt követően önsegítő eszközként a gyászoló későbbi veszteségeinek feldolgozása során önállóan is használni tudja.
+                    <br>
+                    A módszer elsajátítása személyesen vagy online formában is lehetséges!
+                    <a href="https://gyaszfeldolgozasmodszer.hu/project/mezofi-horvath-antonia/">Keressen bizalommal!</a>
+                </p>
+                <br>
+                <br>
+                <h4>„… mert azt megtanultuk, hogyan szerezzünk meg valamit, de azt <br> nem, vajon mit tegyünk, ha elveszítjük azt…”    (J. W. James-R. Friedman)</h4>
+                <img src="GYFM-Specialista-logo.jpg" alt="GYFM Specialista logo">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mezőfi-Horváth Antónia. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const serviceSections = document.querySelectorAll('.services');
+            serviceSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolat</title>
+    <link rel="icon" type="image/png" href="psychology.png">
+    <style>
+        /* Alapstílusok */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 50px 0;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('antonia.jpg') no-repeat center center/cover;
+            transition: filter 2s ease;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero .btn {
+            background: #77aaff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #5599dd;
+        }
+
+        .about {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .about .btn {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .about .btn:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .hero-content {
+                bottom: 10%;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+
+            .about h2 {
+                font-size: 1.5em;
+            }
+
+            .about p {
+                font-size: 1em;
+            }
+
+            .about .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+        }
+       
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Kapcsolat oldal stílusok */
+        section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 20px 0;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
+        }
+
+        #map-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #map {
+            width: 600px;
+            height: 450px;
+            border: 0;
+            border-radius: 10px;
+            margin: 0 auto; /* Ez középre pozícionálja a térképet */
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+
+        .social-links a i {
+            margin-right: 8px;
+        }
+
+        /* Scroll animáció */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-animation {
+            animation: fade-in-up 0.5s ease forwards;
+        }
+    </style>
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mezőfi-Horváth Antónia</h1>
+            <nav>
+                <ul>
+                    <li><a href="nyitolap.html">Kezdőlap</a></li>
+                    <li><a href="rolam.html">Rólam</a></li>
+                    <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li><a href="arak.html">Szolgáltatási díjak</a></li>
+                    <li><a href="rendelom.html">Rendelő</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                    <li><a href="foglalas.html">Online időpontfoglalás</a></li>
+                    <li><a href="ujdonsagok.html">Szakmai megjelenések</a></li>
+                    <li><a href="oszpofik.html">Adományozás egy jó célért</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h2>Kapcsolat</h2>
+                <p class="scroll-animation">Az alábbi elérhetőségek valamelyikén keresztül tud velem kapcsolatba lépni:</p>
+                <br>
+                <br>
+                <ul>
+                    <li class="scroll-animation">📧 Email: mezofi.antonia@gmail.com</li>
+                    <li class="scroll-animation">📞 Telefon: +36 70 380 2841 
+                        <br>
+                        (Bejelentkezés: esténként 19-20 óra között lehetséges.)</li>
+                    <li class="scroll-animation">📍 Cím: 6200 Kiskőrös, Liget utca 20. fsz.2.</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/MezofiHorvathAntonia" target="_blank">
+                        <i class="fab fa-facebook"></i>Facebook
+                    </a>
+                    <a href="https://www.instagram.com/antonia_pszichologus/" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+                <div id="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2740.2873913459134!2d19.288064175732032!3d46.62108417111647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4743b36e59853c3b%3A0xdb103d72447c658!2sMez%C5%91fi-Horv%C3%A1th%20Ant%C3%B3nia%20klinikai%20szakpszichol%C3%B3gus!5e0!3m2!1shu!2shu!4v1717675706237!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mezőfi-Horváth Antónia. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('scroll', function () {
+            const elements = document.querySelectorAll('.scroll-animation');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect().top;
+
+                if (position < windowHeight - 50) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

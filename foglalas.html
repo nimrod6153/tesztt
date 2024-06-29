@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online időpontfoglalás</title>
+    <link rel="icon" type="image/png" href="psychology.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+
+        
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 50px 0;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('antonia.jpg') no-repeat center center/cover;
+            transition: filter 2s ease;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero .btn {
+            background: #77aaff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #5599dd;
+        }
+
+        .about {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .about .btn {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .about .btn:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .hero-content {
+                bottom: 10%;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+
+            .about h2 {
+                font-size: 1.5em;
+            }
+
+            .about p {
+                font-size: 1em;
+            }
+
+            .about .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+        }
+        
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        #google-form-container {
+            text-align: center;
+        }
+
+        #google-form-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            border: none;
+        }
+
+        #videoPopup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #videoPopup.show {
+            display: flex;
+        }
+
+        #videoContainer {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        #videoContainer video {
+            width: 100%;
+            height: auto;
+        }
+
+        #closeButton {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            #videoContainer {
+                padding: 10px;
+            }
+            #closeButton {
+                padding: 5px 10px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mezőfi-Horváth Antónia</h1>
+            <nav>
+                <ul>
+                    <li><a href="nyitolap.html">Kezdőlap</a></li>
+                    <li><a href="rolam.html">Rólam</a></li>
+                    <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li><a href="arak.html">Szolgáltatási díjak</a></li>
+                    <li><a href="rendelom.html">Rendelő</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                    <li><a href="foglalas.html">Online időpontfoglalás</a></li>
+                    <li><a href="ujdonsagok.html">Szakmai megjelenések</a></li>
+                    <li><a href="oszpofik.html">Adományozás egy jó célért</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <br>
+        <div style="text-align: center;">
+            <p>Időpontot online is tud foglalni. Válassza ki a megfelelő szabad időpontot, töltse ki az adatlapot és foglalja le az Ön számára megfelelő alkalmat.</p>
+            <strong>FONTOS! 
+            </strong>
+            <p>Az időpont lefoglalása csak a banki átutalás után válik véglegessé. Az átutalásnak a lefoglalt időpont előtt legalább 48 órával be kell érkeznie. Az időpontfoglalás véglegesítéséről visszaigazolást kap. </p>
+            <h3>Számlaszám: OTP 11773054-09281705</h3>
+            <p>A 'közlemény' rovatba kérem tüntesse fel nevét és a konzultáció időpontját!</p>
+        </div>
+        <div class="container">
+            <iframe src="https://app.minup.io/embed/mezofi-horvath-antonia" width="100%" height="330px" frameborder="0"></iframe>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mezőfi-Horváth Antónia. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+</body>
+</html>

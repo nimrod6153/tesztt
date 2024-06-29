@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szolgáltatások</title>
+    <link rel="icon" type="image/png" href="psychology.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 50px 0;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('antonia.jpg') no-repeat center center/cover;
+            transition: filter 2s ease;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero .btn {
+            background: #77aaff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #5599dd;
+        }
+
+        .about {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .about .btn {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .about .btn:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .hero-content {
+                bottom: 10%;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+
+            .about h2 {
+                font-size: 1.5em;
+            }
+
+            .about p {
+                font-size: 1em;
+            }
+
+            .about .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+        }
+        .services {
+            padding: 20px;
+            font-size: 1.2em;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .services.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .services ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .services li {
+            margin-bottom: 10px;
+        }
+
+        .services img {
+            display: block;
+            margin: 20px auto;
+            max-width: 300px;
+            height: auto;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mezőfi-Horváth Antónia</h1>
+            <nav>
+                <ul>
+                    <li><a href="nyitolap.html">Kezdőlap</a></li>
+                    <li><a href="rolam.html">Rólam</a></li>
+                    <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li><a href="arak.html">Szolgáltatási díjak</a></li>
+                    <li><a href="rendelom.html">Rendelő</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                    <li><a href="foglalas.html">Online időpontfoglalás</a></li>
+                    <li><a href="ujdonsagok.html">Szakmai megjelenések</a></li>
+                    <li><a href="oszpofik.html">Adományozás egy jó célért</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="services">
+                <h2>Egyéni pszichológiai konzultáció, tanácsadás:</h2>
+                <h3>(gyermek esetén szülőkonzultáció)</h3>
+                <p>Szülői szerepünk gyakorlása során időnként felmerülhetnek olyan nehézségek, melyeket nehéz saját eszköztárunkkal kezelni. Előfordulhat, hogy egy gyermek hirtelen dacos lesz, nehezebben kezelhető, esetleg egy már korábban jól működő funkciót (pl. szobatisztaság) elveszít? Hangulata és viselkedése hirtelen megváltozik, esetleg romlik az iskolai teljesítménye, figyelmetlenné válik? Serdülőként olyan módon lázad, mely komolyan megnehezíti a család életét?</p>
+                <p>A szülőkonzultáció keretében lehetőség nyílik átbeszélni a tünetek mögött álló lehetséges okokat, figyelembe véve a fejlődéspszichológia tudománya által feltárt életkori sajátosságokat is. Sok esetben a személyre szóló, egyalkalmas tanácsadással orvosolható a probléma és nincs szükség a gyermek további ellátására.</p>
+                <img src="boldog család.png">
+                <br>
+                <h2>Egyéni pszichológiai ellátás gyermekek számára:</h2>
+                <p>Amennyiben a szülőkonzultáció során feltárt jelenségek, tünetek mögötti okok nem egyértelműek, 5 alkalmas pszichodiagnosztikai szakasz következik, mely során a gyermek életkorának megfelelő pszichodiagnosztikai tesztek felvételére kerül sor, amely a kiváltó okok feltárására törekszik.</p>
+                <p>A folyamat egy szülőkonzultációval zárul, ahol részletesen megbeszélésre kerülnek a feltárt okok, majd ennek megfelelően a segítségadás lehetséges, és a család számára elfogadható módjai. Van, amikor itt lezárul a folyamat, azonban súlyos tünetképzés esetén, amikor a gyermekben történő elakadás pszichológusi segítséget igényel, egy terápiás folyamat indul el, melynek kereteit előre rögzítjük (hány alkalom, milyen gyakorisággal).
+                    <br>
+                    <br>
+                   <strong>FIGYELEM!</strong> Rendőrségi eljárás, bírósági per, illetve kártérítési per alatt álló kliens pszichés állapotáról szakvéleményt <strong> nem állítok ki</strong>, hiszen ez igazságügyi pszichológus szakértő feladata. Kérem ennek tudatában vegyék igénybe a szolgáltatást.
+                </p>
+                <img src="érezd magad jobban.png">
+                <br>
+                <h2>Egyéni pszichológiai konzultáció, tanácsadás felnőtteknek:</h2>
+                <p>Felnőttként már kialakult személyiséggel rendelkezünk, melyet a hozott, örökölt temperamentum mellett a szocializációnk során szerzett tapasztalatok is formálnak. Minden ember egyedi, minden személyiség egyedi, így saját személyiségműködésünkben felfedezhetünk olyan mintázatokat, viselkedésbeli és kommunikációs sajátosságokat, melyeket esetleg nem értünk, netán hátráltatnak az életünk bizonyos területein, ezért elképzelhető, hogy idővel változtatni szeretnénk rajta. Az önismereti munka eredményének révén tudatosabban élhetjük mindennapjainkat, mely egy sikeresebb és boldogabb élethez segít hozzá.</p>
+                <p>Emellett kerülhetünk olyan élethelyzetekbe, amikor egy kis segítségre, támogatásra van szükségünk, legyen az munkahelyi probléma, párkapcsolati nehézség, gyermeknevelési nehézség, vagy egy új életszakasz kihívásainak való nehezített megfelelés.</p>
+                <p>Az első konzultációt követően döntés születik arról, hogy szükséges-e a rendszeres pszichológiai ellátás, melynek célját, kereteit előre rögzítjük.</p>
+                <img src="https://www.simplypsychology.org/wp-content/uploads/Psychotherapy.jpg" alt="Pszichoterápia kép">
+                <br>
+                <h2>Krízisintervenció:</h2>
+                <p>Érezte már úgy, hogy egy esemény hatására mintha kihúzták volna a lába alól a talajt? Hogy képtelen a munkájára koncentrálni? Állandó rossz érzést, bizonytalanságot él át, miközben képtelen megoldást találni élethelyzetére és tehetetlenségérzése enyhítésére?</p>
+                <p>Mindannyian átélhettük már ezt, hiszen életünk során időnként szembesülhetünk olyan krízishelyzetekkel, amikor azt érezhetjük, hogy nem/nehezen boldogulunk egyedül.</p>
+                <p>Krízisnek nevezzük az olyan érzelmileg kritikus, feszült, fájdalmas, túlterhelő állapotot, amelyben fenyegetettséget, kilátástalanságot, tehetetlenséget élünk meg és az aktuális helyzetet a szokásos problémamegoldási stratégiákkal nem tudjuk megoldani.</p>
+                <p>Ezekben az esetekben szakszerű segítségre, támogatásra lehet szükség, hiszen nem mindegy, hogy egy krízishelyzetbe beletörünk, belekeseredünk, vagy azt feldolgozva, megerősödve jövünk ki belőle.</p>
+                <img src="https://www.apa.org/images/carousel-emotional-ditress-b_tcm7-186012.jpg" alt="Krízisintervenció">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mezőfi-Horváth Antónia. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const serviceSections = document.querySelectorAll('.services');
+            serviceSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

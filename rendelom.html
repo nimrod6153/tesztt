@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendelőm</title>
+    <link rel="icon" type="image/png" href="psychology.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+
+
+        nav ul li a:hover {
+            color: #333;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 50px 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .gallery-item {
+            flex: 1 1 300px;
+            margin: 10px;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .gallery-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .gallery-item {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mezőfi-Horváth Antónia</h1>
+            <nav>
+                <ul>
+                    <li><a href="nyitolap.html">Kezdőlap</a></li>
+                    <li><a href="rolam.html">Rólam</a></li>
+                    <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li><a href="arak.html">Szolgáltatási díjak</a></li>
+                    <li><a href="rendelom.html">Rendelő</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                    <li><a href="foglalas.html">Online időpontfoglalás</a></li>
+                    <li><a href="ujdonsagok.html">Szakmai megjelenések</a></li>
+                    <li><a href="oszpofik.html">Adományozás egy jó célért</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 style="text-align:center;">Rendelőm</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="rendelo1.jpg" alt="Rendelő képe 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="rendelo2.jpg" alt="Rendelő képe 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="rendelo3.jpg" alt="Rendelő képe 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="rendelo4.jpg" alt="Rendelő képe 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="rendelo5.jpg" alt="Rendelő képe 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="rendelo6.jpg" alt="Rendelő képe 6">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mezőfi-Horváth Antónia. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const items = document.querySelectorAll(".gallery-item");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            items.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

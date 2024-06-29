@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rólam</title>
+    <link rel="icon" type="image/png" href="psychology.png">
+    <style>
+       
+       body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block; /* Inline elemek helyett blokkokat használunk */
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 15px; /* Kisebb padding a jobb megjelenés érdekében */
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #333;
+    background-color: #fff;
+}
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 50px 0;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('antonia.jpg') no-repeat center center/cover;
+            transition: filter 2s ease;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero .btn {
+            background: #77aaff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: #5599dd;
+        }
+
+        .about {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .about .btn {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .about .btn:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .hero {
+                height: 60vh;
+            }
+
+            .hero-content {
+                bottom: 10%;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+
+            .about h2 {
+                font-size: 1.5em;
+            }
+
+            .about p {
+                font-size: 1em;
+            }
+
+            .about .btn {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .about-image {
+            flex: 0 1 400px;
+            margin: 20px;
+        }
+
+        .about-image img {
+            width: 80%; /* Adjust the width as needed */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-content {
+            flex: 1;
+            margin: 20px;
+        }
+
+        .about-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-content p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .about-content .btn {
+            background: #77aaff;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .about-content .btn:hover {
+            background: #aac3df;
+        }
+
+        .about-text-below {
+            margin: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+            }
+
+            .about-content {
+                margin: 0;
+                text-align: justify;
+            }
+
+            .about-content h2 {
+                font-size: 2em;
+            }
+
+            .about-content p {
+                font-size: 1.2em;
+            }
+
+            .about-image img {
+                width: 80%; /* Adjust the width as needed */
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .about-text-below {
+                text-align: justify;
+            }
+        }
+
+        .about-text-below{
+            margin: 0;
+            text-align: justify;
+        }
+
+        .about-text-below h2 {
+            font-size: 2em;
+        }
+
+        .about-text-below {
+            font-size: 1.2em;
+        }
+
+        .about-text-below{
+            font-size: 1.4em;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+   </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mezőfi-Horváth Antónia</h1>
+            <nav>
+                <ul>
+                    <li><a href="nyitolap.html">Kezdőlap</a></li>
+                    <li><a href="rolam.html">Rólam</a></li>
+                    <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li><a href="arak.html">Szolgáltatási díjak</a></li>
+                    <li><a href="rendelom.html">Rendelő</a></li>
+                    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+                    <li><a href="foglalas.html">Online időpontfoglalás</a></li>
+                    <li><a href="ujdonsagok.html">Szakmai megjelenések</a></li>
+                    <li><a href="oszpofik.html">Adományozás egy jó célért</a></li>
+                </ul>
+            </nav>            
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="about-section">
+                <div class="about-image">
+                    <img src="pszichologusno.png" alt="Mezőfi-Horváth Antónia">
+                </div>
+                <div class="about-content">
+                    <h2>Rólam</h2>
+                    <p>Mezőfi-Horváth Antónia klinikai és mentálhigiéniai szakpszichológus, integratív hipnoterapeuta, Gyászfeldolgozás Módszer® Specialista és pszichológia szakos tanár vagyok, emellett feleség és édesanya.</p>
+                </div>
+            </section>
+            <section class="about-text-below">
+            <p>Szerencsés embernek tartom magam, mert már az általános iskolában tudtam, hogy a segítő szakmában van a helyem, ennek megfelelően elköteleződve, céltudatosan és sok kitartással haladtam előre szakmai pályám során. </p>
+                <p>Büszke vagyok arra, hogy a legjobb magyarországi egyetemeken tanulhattam nappali tagozaton: 2006-ban az ELTE-n végeztem pszichológusként, 2007-ben diplomáztam pszichológia szakos tanárként, majd 2012-ben a PTE-n szakvizsgáztam és lettem klinikai és mentálhigiénés gyermek-, és ifjúsági szakpszichológus. Széleskörű érdeklődésemnek megfelelően a pszichológia tudományának számos területén dolgoztam az elmúlt 20 évben gyermekekkel és felnőttekkel egyaránt: pszichológusként Pedagógiai Szakszolgálatban (ebből 7 évig voltam tagintézményigazgató-helyettes) és Gyermekjóléti Szolgálatnál, nevelési-oktatási intézményben iskolapszichológusként, felnőttképzésben pszichológia szakos tanárként, emellett részt vettem tesztfejlesztésekben, gyakran tartok felkérésre pszichoedukatív (ismeretterjesztő) jellegű előadásokat, szülőcsoportokat, gyermek-, és felnőtt csoportokat, tantestületek számára továbbképzéseket.</p>
+                <p>Az egyetemen elsajátított magas színvonalú elméleti tudás megszerzése mellett későbbi munkavégzésem színvonalát tekintve szerencsésnek tartom magam, hogy már az egyetem negyed-ötöd évében pszichológus munkakörben dolgozhattam, így ma már 20 éves szakmai tapasztalattal várom a hozzám fordulókat. </p>
+                <p>Mindig arra törekedtem, hogy a hozzám fordulók azt érezzék, hogy jó helyen vannak nálam, osztatlan figyelemben részesülnek, és számíthatnak arra, hogy együtt megtaláljuk a számukra legmegfelelőbb fejlődési utat, bármilyen problémával küzdjenek is. Terápiás szemléletem integratív jellegű, különböző pszichológiai szemléleteket ötvöző, széleskörű módszertannal. E szemléletnek megfelelően igyekszem megtalálni a hozzám forduló kliens egyedi jellemzőihez, sajátos működésmódjához és igényeihez illeszkedő, legalkalmasabb és leghatékonyabb módszereket, amit a pszichológia tudománya nyújtani tud. A leggyakrabban alkalmazott verbális terápiák mellett különösen kedvelem a módosult tudatállapotban való gyógyítást, emellett kognitív viselkedésterápiás módszerekkel is gyakran dolgozok.</p>
+           <p>Azt gondolom, hogy egy pszichológus attól (is) válik hitelessé és jó szakemberré, ha a személyes életét érintő nehézségek tapasztalatait integrálni tudja a személyiségébe, így hasznosítva azt a munkája során, hiszen a tankönyvi tudás önmagában mit sem ér. Életutam egyik kríziséből kinőve, 2012-től specifikusan foglalkozok daganatos betegek támogatásával.</p>
+            <p>Amennyiben úgy érzi, hogy Én vagyok az Ön számára a legmegfelelőbb szakember, keressen bizalommal a megadott elérhetőségek valamelyikén!</p>
+        </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mezőfi-Horváth Antónia. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+</body>
+</html>
